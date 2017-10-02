@@ -1,0 +1,94 @@
+% FP-Dokumentenklasse laden
+\documentclass[
+    abteilunga,         % Abteilung des Versuchs: a, b oder c
+%   nocolorback,        % Titelseite weiß (Tinte sparen)
+%   censor,             % E-Mail-Adressen und Matrikelnummern zensieren
+    english,ngerman     % Letzte Sprache ist aktive Sprache; EN & DE angeben!
+]{tudfp}                %   Für englische Protokolle einfach vertauschen.
+
+%-----------------------------------------------------------------------------
+% Allgemeine Informationen zum Protokoll (für Titelseite, PDF-Eigenschaften)
+\VersuchsNr{{4.12}}
+\Titel{{Design optischer Systeme}}
+
+\Betreuer{{Martin Sturm}}
+\LabDate{2016-05-23} % Durchgeführt am
+\ReleaseDate{2016-06-11} % Abgabe
+
+\AutorA{{Alexander Schilling}}
+\AutorAMatr{{2539498}}
+\AutorAMail{schilling\_alexander@yahoo.de}
+
+
+\AutorB{{Matthias Göbel}}
+\AutorBMatr{{2634403}}
+\AutorBMail{goebel.matthias.da@t-online.de}
+
+%-----------------------------------------------------------------------------
+% Eigene Pakete/Anpassungen
+
+\usepackage{graphicx}         % Grafiken einbinden
+%\usepackage{tikz}             % Zeichnungen erstellen
+\usepackage{pdfpages}
+\usepackage{biblatex}         % Bibliograhie
+\addbibresource{bib/literatur.bib}
+
+\usepackage{subcaption}
+
+\usepackage{longtable}
+%\usepackage{multirow}
+\usepackage{booktabs}
+
+% Vektoren fett statt mit Pfeil
+\let\oldvec\vec
+\renewcommand{\vec}[1]{\boldsymbol{#1}}
+\newcommand{\zemax}{\textit{Zemax}}
+\DeclareSIUnit\cycles{cycles}
+%-----------------------------------------------------------------------------
+% Dokumentenanfang
+\begin{document}
+
+% Titelseite
+\maketitle
+
+% Inhaltsverzeichnis
+\tableofcontents
+\cleardoublepage
+
+%-----------------------------------------------------------------------------
+% Eigentlicher Protokollinhalt
+%-----------------------------------------------------------------------------
+\section{Einleitung}
+\input{tex/einleitung.tex}
+
+\section{Grundlagen}
+\input{tex/Grundlagen_anfang.tex}
+
+\section{Mechanik}
+\input{tex/Anleitung_platte.tex}
+
+\section{Elektronik}
+\input{tex/elektronik.tex}
+
+\section{Untersuchung}
+\input{tex/vermessung.tex}
+
+
+%\section{Auswertung}
+%\input{tex/auswertung.tex}
+
+
+%\section{Fazit}
+%\input{tex/fazit.tex}
+
+
+% Literaturverzeichnis
+\nocite{*} % Alle Quellen (auch ohne Zitieren) auflisten
+\printbibliography[heading=bibnumbered]
+
+
+%\input{tex/daten.tex}
+
+
+%-----------------------------------------------------------------------------
+\end{document}
